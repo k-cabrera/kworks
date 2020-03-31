@@ -1,0 +1,17 @@
+body{
+    color:black;
+    text-align: center;
+    width: 400px;
+    margin:auto;
+    border: 2px solid gray;
+    background-color: lightblue;
+    padding: 100px;
+    font-weight: 900;
+}
+aside{
+    color: rgb(0, 0, 0);
+    font-weight: lighter;
+}
+title{
+    color: white;
+}

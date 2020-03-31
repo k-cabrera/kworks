@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sorting Numbers Into Ascending Order</title>
+        <link href="style.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header>
+            <h1>TXT Web Application: Second Round</h1>
+            <h1>Choose 3 numbers.</h1>
+        </header>
+        <form>
+            <label for="firstnumber">First number:</label>
+            <input type="number" id="firstnumber">
+            <br><br>
+            <label for="secondnumber">Second number:</label>
+            <input type="number" id="secondnumber">
+            <br><br>
+            <label for="thirdnumber">Third number:</label>
+            <input type="number" id="thirdnumber">
+            <br><br>
+            <button id="submit">submit</button>
+            <script>
+                var submitbutton = document.getElementById("submit");
+                submitbutton.onclick = changeNumber;
+                function changeNumber(){
+                    /* The condition is placed in incase the output is made to not be numbers
+                    automatically.*/
+                    var firstinput= document.getElementById("firstnumber").value;
+                    var secondinput = document.getElementById("secondnumber").value;
+                    var thirdinput = document.getElementById("thirdnumber").value;
+                    /* If one of the inputs isn't a number than a alert will pop up.*/
+                    if (isNaN(firstinput) || isNaN(secondinput) || isNaN(thirdinput)){
+                        alert("You have inputed an invalid character. Please try again.")
+                    }
+                    else{
+                    var nums = [firstinput, secondinput, thirdinput];
+                    nums.sort(function(a,b) {return a-b});
+                    var firstresult = document.getElementById("firstnum");
+                    var secondresult = document.getElementById("secondnum");
+                    var thirdresult = document.getElementById("thirdnum");
+                    firstresult.innerHTML = nums[0];
+                    secondresult.innerHTML = nums[1];
+                    thirdresult.innerHTML = nums[2];
+                    return false;
+                    }
+                }
+            </script>
+            
+        </form>
+        <h2>The numbers in ascending order are as such.</h2>
+        <label for="firstnum">1.</label>
+        <output id="firstnum"></output>
+        <br><br>
+        <label for="secondnum">2.</label>
+        <output id="secondnum"></output>
+        <br><br>
+        <label for="thirdnum">3.</label>
+        <output id="thirdnum"></output>                  
+    </body>
+    <aside>
+        <br><br>
+        Made by Kenneth Cabrera
+    </aside>
+</html>
